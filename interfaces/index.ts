@@ -4,7 +4,25 @@
 //
 // import { User } from 'path/to/interfaces';
 
-export type User = {
-  id: number
-  name: string
+import React, { ReactNode } from "react";
+
+export type IUser = {
+  username: string;
+  password: string;
+  email?: string;
+  token?: string;
+};
+
+export interface IContext {
+  loggedin: boolean;
+  user: IUser | null;
+  message: string;
+  users: IUser[]
+
+  status : "loading" | "idle",
+  error : string | null
+}
+
+export interface IProps {
+  children?: ReactNode;
 }
